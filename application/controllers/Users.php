@@ -7,11 +7,7 @@ class Users extends CI_Controller {
 		$this->load->model('users_model');
 	}
 	public function get_users(){
-		$data['users'] = $this->users->getUsers();
-	}
-	public function index()
-	{
 		$data['users'] = $this->users_model->getUsers();
-		$this->load->view('myindex', $data);
+		echo json_encode($data);
 	}
 }
