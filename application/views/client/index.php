@@ -10,7 +10,8 @@
     <h1>Main/Music</h1>
     <div id="app">
         {{message}} <br>
-        <button @click="getUser('vladislav', '')">Click!</button>
+        <button @click="getUser('vladislav', '')">Get!</button>
+        <button @click="setUser('new_user', 'password')">Put!</button>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

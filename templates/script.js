@@ -10,6 +10,13 @@ let app = new Vue({
                 password: password
             })
             .then(data => console.log(data.data))
+        },
+        setUser(user_name, password){
+            axios.post('index.php/users/set_user',{
+                name: user_name,
+                password: password
+            })
+            .then(data => console.log(data.data))
         }
     }
 })
