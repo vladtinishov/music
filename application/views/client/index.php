@@ -8,8 +8,12 @@
 </head>
 <body>
     <h1>Main/Music</h1>
+    <div id="app">
+        {{message}} <br>
+        <button @click="getUser('vladislav', '')">Click!</button>
+    </div>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script src="<?php echo base_url();?>templates/script.js"></script>
 </body>
 </html>
