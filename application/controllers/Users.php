@@ -28,4 +28,9 @@ class Users extends CI_Controller {
 														$this->name);
 		echo json_encode($data);
 	}
+	public function set_signer(){
+		$data['response'] = $this->users_model->setSigner($this->password,
+														$this->name);
+		echo json_encode($data);
+	}
 }

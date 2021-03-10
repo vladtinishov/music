@@ -20,7 +20,8 @@ class Users_model extends CI_Model{
     public function getSinger($password, $name){
         $query = $this->db->query("SELECT * FROM singers 
                                     WHERE singer_naem='$name' AND 
-                                    password='$password'")
+                                    password='$password'");
+        return $query->result_array();
     }
     public function setSinger($pasword, $name){
         $query = $this->db->query("INSERT INTO singers 
