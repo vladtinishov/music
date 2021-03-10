@@ -23,15 +23,11 @@
         <button @click="workingWithUsers('set_singer')">Put!</button>
 
         <h1>Загрузить файл:</h1> <br><br>
-        <form enctype="multipart/form-data" action="index.php/musicDownload/downloadFile" method="POST">
-            <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
-            <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-            <!-- Название элемента input определяет имя в массиве $_FILES -->
-            Отправить этот файл: <input name="userfile" type="file" />
-            <input type="submit" value="Отправить файл" />
-        <a href="index.php/musicDownload/downloadFile">asdf</a>
-
-        </form>
+        <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
+        <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+        <!-- Название элемента input определяет имя в массиве $_FILES -->
+        Отправить этот файл: <input name="userfile" type="file" /><br><br>
+        <button @click="uploadMusic()" id="send_file">Отправить</button>
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

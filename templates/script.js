@@ -12,6 +12,14 @@ let app = new Vue({
                 password: password
             })
             .then(data => console.log(data.data))
-        }
+        },
+        uploadMusic:function(){
+            // let formData = new FormData();
+            // let file = document.getElementById('userfile');
+            // formData.append('file', file.files[0]);
+            // axios.post('input.php/musicdownoload/downloadFile', {file: formData})
+            // .then(console.log('ok'))
+            alert();
+        },
     }
 })
