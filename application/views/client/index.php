@@ -9,7 +9,7 @@
 <body>
     <h1>Main/Music</h1>
     <div id="app">
-        {{message}} <br>
+        {{message}} <br><br><br>
         <input id="name" type="text"> <br><br>
         <input id="password" type="text"> <br><br>
         <h1>Пользователь:</h1>
@@ -22,6 +22,8 @@
         <button @click="workingWithUsers('get_singer')">Get!</button>
         <button @click="workingWithUsers('set_singer')">Put!</button>
     </div>
+
+    any for test
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script src="<?php echo base_url();?>templates/script.js"></script>
