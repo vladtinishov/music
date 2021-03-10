@@ -23,7 +23,6 @@
         <button @click="workingWithUsers('set_singer')">Put!</button>
     </div>
 
-    any for test
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script src="<?php echo base_url();?>templates/script.js"></script>
