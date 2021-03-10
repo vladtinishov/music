@@ -1,0 +1,8 @@
+sudo chown -R <user> /home/user/dir/    |-изменить владельца папки
+
+cd /opt/lampp                           |
+sudo ./manager-linux-x64.run            |-запуск XAMPP
+
+sudo lsof -i ':80'                      |-проверить кто запущен на 80-ом порту
+
+

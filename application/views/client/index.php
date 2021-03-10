@@ -22,12 +22,15 @@
         <button @click="workingWithUsers('get_singer')">Get!</button>
         <button @click="workingWithUsers('set_singer')">Put!</button>
 
-        <h1>Загрузить файл:</h1> <br><br>
-        <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
-        <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-        <!-- Название элемента input определяет имя в массиве $_FILES -->
-        Отправить этот файл: <input name="userfile" type="file" /><br><br>
-        <button @click="uploadMusic()" id="send_file">Отправить</button>
+        <h1>Загрузка файла:</h1>
+        <form id="form" enctype="multipart/form-data" method="POST">
+            <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
+            <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+            <!-- Название элемента input определяет имя в массиве $_FILES -->
+            Отправить этот файл: <input name="userfile" type="file" />
+            
+        </form>
+        <button @click="uploadMusic">Send</button>
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
