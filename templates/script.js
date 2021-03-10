@@ -17,7 +17,7 @@ let app = new Vue({
             let form = document.getElementById('form');
             let formData = new FormData(form);
             axios.post('index.php/MusicDownload/downloadFile', formData)
-            .then(data => console.log(data))
+            .then(data => console.log(data.data))
         },
     }
 })

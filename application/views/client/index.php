@@ -24,10 +24,8 @@
 
         <h1>Загрузка файла:</h1>
         <form id="form" enctype="multipart/form-data" method="POST">
-            <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
-            <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-            <!-- Название элемента input определяет имя в массиве $_FILES -->
-            Отправить этот файл: <input name="userfile" type="file" />
+            <input type="hidden" name="MAX_FILE_SIZE" value="30000"/>
+            Отправить этот файл: <input name="userfile" type="file"/>
             
         </form>
         <button @click="uploadMusic">Send</button>
