@@ -11,14 +11,21 @@ class Users extends CI_Controller {
 		$this->password = $_POST['password'];
 		$this->name = $_POST['name'];
 	}
+	// как обычный юзер
 	public function get_user(){
-		$data['users'] = $this->users_model->getUsers($this->password, 
+		$data['user'] = $this->users_model->getUser($this->password, 
 														$this->name);
 		echo json_encode($data);
 	}
 	public function set_user(){
-		$data['response'] = $this->users_model->setUsers($this->password, 
+		$data['response'] = $this->users_model->setUser($this->password, 
 															$this->name);
+		echo json_encode($data);
+	}
+	// как исполнитель
+	public function get_signer(){
+		$data['singer'] = $this->users->model->getSigner($this->password,
+														$this->name);
 		echo json_encode($data);
 	}
 }
