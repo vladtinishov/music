@@ -6,6 +6,7 @@ class Users extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('users_model');
+		
 		$_POST = json_decode(file_get_contents('php://input'), true);
 		$this->password = $_POST['password'];
 		$this->name = $_POST['name'];
