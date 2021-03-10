@@ -26,7 +26,8 @@
         <form id="form" enctype="multipart/form-data" method="POST">
             <input type="hidden" name="MAX_FILE_SIZE" value="30000"/>
             Отправить этот файл: <input name="userfile" type="file"/>
-            
+            <input type="text" name="user_id">
+            <input type="text" name="album_id">
         </form>
         <button @click="uploadMusic">Send</button>
     </div>
