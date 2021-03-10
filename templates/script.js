@@ -4,9 +4,11 @@ let app = new Vue({
         message: 'hello, world'
     },
     methods: {
-        getUser(user_name, password){
+        getUser(){
+            let name = document.getElementById('name').value;
+            let password = document.getElementById('password').value;
             axios.post('index.php/users/get_user', {
-                name: user_name,
+                name: name,
                 password: password
             })
             .then(data => console.log(data.data))
