@@ -10,10 +10,19 @@
     <h1>Main/Music</h1>
     <div id="app">
         {{message}} <br>
-        <input id="name" type="text" name="name">
-        <input id="password" type="text" name="password">
-        <button @click="getUser('vladislav', '')">Get!</button>
-        <button @click="setUser">Put!</button>
+        <h1>Пользователь:</h1>
+        <input id="user_name" type="text"> <br><br>
+        <input id="user_password" type="text"> <br><br>
+        <button @click="getUser">Get!</button> 
+        <button @click="setUser">Put!</button> <br>
+
+        <br><br>
+
+        <h1>Исполнитель</h1>
+        <input id="singer_name" type="text"> <br><br>
+        <input id="singer_password" type="text"> <br><br>
+        <button @click="getSinger">Get!</button>
+        <button @click="setSinger">Put!</button>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

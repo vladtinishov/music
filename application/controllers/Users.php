@@ -23,13 +23,13 @@ class Users extends CI_Controller {
 		echo json_encode($data);
 	}
 	// как исполнитель
-	public function get_signer(){
-		$data['singer'] = $this->users->model->getSigner($this->password,
+	public function get_singer(){
+		$data['singer'] = $this->users_model->getSinger($this->password,
 														$this->name);
 		echo json_encode($data);
 	}
-	public function set_signer(){
-		$data['response'] = $this->users_model->setSigner($this->password,
+	public function set_singer(){
+		$data['response'] = $this->users_model->setSinger($this->password,
 														$this->name);
 		echo json_encode($data);
 	}

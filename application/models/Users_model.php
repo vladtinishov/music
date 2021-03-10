@@ -19,11 +19,11 @@ class Users_model extends CI_Model{
     // для исполнителей
     public function getSinger($password, $name){
         $query = $this->db->query("SELECT * FROM singers 
-                                    WHERE singer_naem='$name' AND 
+                                    WHERE singer_name='$name' AND 
                                     password='$password'");
         return $query->result_array();
     }
-    public function setSinger($pasword, $name){
+    public function setSinger($password, $name){
         $query = $this->db->query("INSERT INTO singers 
                                     VALUES('', '$name', '$password')");
         return $query;
