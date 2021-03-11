@@ -16,7 +16,6 @@
             <ul>
                 <li><i class="fa fa-headphones" aria-hidden="true"></i></li>
                 <li v-on:click="getSelect()"><i class="fa fa-sign-in" aria-hidden="true"></i></li>
-                <li><i class="fa fa-search" aria-hidden="true"></i></li>
                 <div class="mus_buts">
                     <div class="mus_play" @click="play">
                         <i class="fa fa-play" aria-hidden="true"></i>
