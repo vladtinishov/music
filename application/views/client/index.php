@@ -17,11 +17,33 @@
                 <li><i class="fa fa-headphones" aria-hidden="true"></i></li>
                 <li v-on:click="getSelect()"><i class="fa fa-sign-in" aria-hidden="true"></i></li>
                 <li><i class="fa fa-search" aria-hidden="true"></i></li>
+                <div class="mus_buts">
+                    <div class="mus_play" @click="play">
+                        <i class="fa fa-play" aria-hidden="true"></i>
+                    </div>
+                    /
+                    <div class="mus_pause" @click="stop()">
+                        <i class="fa fa-pause" aria-hidden="true"></i>
+                    </div>
+                    <span>{{mus_name}}</span>
+                </div>
             </ul>
         </nav>
 
         <div class="main_music_list">
+            <div class="music" v-for="music in musics">
+                <div @click="start(music.name)" class="music_inner">
+                    <span class="singer_name">{{music.singer_name}}</span> -
 
+                    <span>{{music.name}}</span> 
+
+                    <audio class="mus_timeline" controls>
+                        <source v-bind:src="'music/'+music.name" type="audio/mpeg">
+                        <a href="'music/'+music.name">Скачайте музыку</a>.
+                    </audio>
+                </div>
+                <hr>
+            </div>
         </div>
 
         <div v-if="select" class="select">

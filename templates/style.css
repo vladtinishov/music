@@ -76,3 +76,25 @@ nav ul li{
     cursor: pointer;
     color: rgba(26, 108, 202, 0.959);
 }
+
+.main_music_list{
+    font-family: sans-serif;
+}
+.music{
+    margin: 10px;
+}
+.mus_timeline{
+    display: none ;
+}
+.mus_buts{
+    display: flex;
+    font-size: 18px;
+    color: white;
+}
+.mus_buts div{
+    margin: 0 10px;
+}
+.music_inner{
+    display: flex;
+    align-items: center;
+}
