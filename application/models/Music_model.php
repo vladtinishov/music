@@ -4,9 +4,9 @@ class Music_model extends CI_Model{
     public function __construct(){
         $this->load->database();
     }
-    public function setMusic($singer_id, $name, $album_id){
+    public function setMusic($singer_id, $name){
         $query = $this->db->query("INSERT INTO musics VALUES(
-                                    '', $singer_id, '$name', $album_id)");
+                                    '', $singer_id, '$name')");
         return $query;
     }
 }

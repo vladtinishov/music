@@ -6,7 +6,6 @@ class MusicDownload extends CI_Controller{
     }
     public function downloadFile(){
         $user = $_POST['user_id'];
-        $album = $_POST['album_id'];
         $uploaddir = 'music';
         $uploadfile = $uploaddir . '/' . basename($_FILES['userfile']['name']);
 
@@ -14,7 +13,7 @@ class MusicDownload extends CI_Controller{
             $this->music_model->setMusic(
                                     $user, 
                                     $_FILES['userfile']['name'], 
-                                    $album);
+                                    );
             echo "Yes";
         } else {
             echo "No";
