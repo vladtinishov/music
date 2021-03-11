@@ -4,13 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>/templates/style.css">
     <title>Music</title>
 </head>
 <body>
-    <h1>Main/Music</h1>
+    <!-- <h1>Main/Music</h1> -->
     <div id="app">
-        {{message}} <br><br><br>
+        <nav>
+            <ul>
+                <li><i class="fa fa-headphones" aria-hidden="true"></i></li>
+                <li v-on:click="getSelect()"><i class="fa fa-sign-in" aria-hidden="true"></i></li>
+                <li><i class="fa fa-search" aria-hidden="true"></i></li>
+            </ul>
+        </nav>
+
+        <div class="main_music_list">
+
+        </div>
+
+        <div v-if="select" class="select">
+            <div class="inner_select">
+                <p>Войти как:</p>
+                <div class="select_buttons">
+                    <div class="but">
+                        <i class="fa fa-headphones" aria-hidden="true"></i> <br>
+                        <span>Слушатель</span>
+                    </div>
+                    <div class="but">
+                    <i class="fa fa-volume-up" aria-hidden="true"></i> <br>
+                        <span>Исполнитель</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- имя:
         <input id="name" type="text"> <br><br>
+        фамилия:
         <input id="password" type="text"> <br><br>
         <h1>Пользователь:</h1>
         <button @click="workingWithUsers('get_user')">Get!</button> 
@@ -28,7 +59,7 @@
             Отправить этот файл: <input name="userfile" type="file"/>
             <input type="hidden" value="1" name="user_id">
         </form>
-        <button @click="uploadMusic">Send</button>
+        <button @click="uploadMusic">Send</button> -->
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

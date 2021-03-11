@@ -1,7 +1,8 @@
 let app = new Vue({
     el: '#app',
     data: {
-        message: 'hello, world'
+        message: 'hello, world',
+        select: false,
     },
     methods: {
         workingWithUsers(method){
@@ -19,5 +20,8 @@ let app = new Vue({
             axios.post('index.php/MusicDownload/downloadFile', formData)
             .then(data => console.log(data.data))
         },
+        getSelect(){
+            this.select = true;
+        }
     }
 })
