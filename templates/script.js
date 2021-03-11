@@ -5,7 +5,7 @@ let app = new Vue({
         select: false,
         musics: [],
         key: false,
-        mus_obj: '',
+        mus_obj: new Audio(),
         mus_name: '',
     },
     mounted: function(){
@@ -42,7 +42,8 @@ let app = new Vue({
             this.mus_obj.pause();
         },
         start(name){
-            this.mus_name = name
+            this.mus_name = name;
+            this.stop();
             this.mus_obj = new Audio('music/' + name);
             this.play();
         }
