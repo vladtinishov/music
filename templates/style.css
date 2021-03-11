@@ -1,0 +1,78 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+
+    background: rgb(26, 108, 202);
+    margin-top: 0;
+
+    box-shadow: 1px 3px 1px 1px rgba(26, 108, 202, 0.678);
+}
+nav ul li{
+    font-size: 18px;
+}
+nav ul li:first-child{
+    font-size: 35px;;
+}
+nav ul li{
+    color: white;
+    margin: 5px 10px;
+}
+
+
+.select{
+    display: flex;
+    justify-content: center;
+}
+.select:first-child{
+    display: block;
+}
+.inner_select{
+    text-align: center;
+}
+.inner_select p{
+    font-size: 4rem;
+    font-family: sans-serif;
+}
+.select_buttons{
+    display: flex;
+}
+.select_buttons i{
+    font-size: 15rem;
+    box-sizing: border-box;
+}
+.but{
+    box-sizing: border-box;
+    margin: 0px 50px;
+    width: 300px;
+    text-align: center;
+    transition: .5s all;
+}
+.but i{
+    color: rgb(43, 185, 154);
+}
+.but:first-child i{
+    color:rgba(26, 108, 202, 0.678)
+}
+.but span{
+    font-family: sans-serif;
+    font-size: 2rem;
+}
+.but:hover{
+    border-radius: 10px;
+    background:rgba(43, 185, 154, 0.404);
+    cursor: pointer;
+    color: rgb(43, 185, 154);
+}
+.but:first-child:hover{
+    border-radius: 10px;
+    background:rgba(26, 108, 202, 0.336);
+    cursor: pointer;
+    color: rgba(26, 108, 202, 0.959);
+}
