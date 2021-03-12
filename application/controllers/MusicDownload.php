@@ -19,5 +19,9 @@ class MusicDownload extends CI_Controller{
             echo "No";
         }
     }
+    public function get_all_music(){
+        $result = $this->music_model->getAllMusic();
+        echo json_encode($result->result_array());
+    }
 }
 
