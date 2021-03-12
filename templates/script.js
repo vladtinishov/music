@@ -1,3 +1,14 @@
+HTMLAudioElement.prototype.getCurrent = function(){
+    return this.currentTime;
+}
+HTMLAudioElement.prototype.setCurrent = function(count){
+    this.currentTime = count;
+}
+HTMLAudioElement.prototype.getDuration = function(){
+    return this.duration;
+}
+console.log(HTMLAudioElement.prototype);
+
 let app = new Vue({
     el: '#app',
     data: {
@@ -11,6 +22,8 @@ let app = new Vue({
         form_show_singer: false,
 
         get_load_form: false,
+        c_time: 0,
+        time: 0,
     },
     mounted: function(){
         axios.post('index.php/MusicDownload/get_all_music')
@@ -68,15 +81,25 @@ let app = new Vue({
         },
         play(){
             this.mus_obj.play();
+            this.c_time = setInterval(()=>{
+                console.log(this.mus_obj.getCurrent());
+                this.c_time = this.mus_obj.getCurrent();
+            }, 1000)
         },
         stop(){
             this.mus_obj.pause();
+            clearInterval(this.c_time)
         },
         start(name){
             this.mus_name = name;
             this.stop();
             this.mus_obj = new Audio('music/' + name);
             this.play();
+            setTimeout(()=>{
+                this.time = this.mus_obj.getDuration();
+                console.log(this.time)
+                this.time = 100 / this.time; 
+            }, 200)
         },
         change(){
             this.select = false;
@@ -85,6 +108,13 @@ let app = new Vue({
         change_singer(){
             this.select = false;
             this.form_show_singer = true
+        },
+        setTime(event){
+            let x = event.pageX;
+            let dur = this.mus_obj.getDuration()
+            dur = 100 / dur;
+            this.mus_obj.setCurrent(x*dur)
+            this.c_time = x*dur
         }
     }
 })

@@ -10,7 +10,6 @@
 </head>
 <body>
     <style><?php require_once('templates/style.css');?></style>
-    <!-- <h1>Main/Music</h1> -->
     <div id="app">
         <nav>
             <ul>
@@ -28,6 +27,9 @@
                 </div>
             </ul>
         </nav>
+        <div @click="setTime" class="time_line">
+            <div v-bind:style="{width: time*c_time + '%'}" class="inner_time_line"></div>
+        </div>
 
         <div v-if="select" class="select">
             <div class="inner_select">
@@ -81,7 +83,6 @@
             <div class="music" v-for="music in musics">
                 <div @click="start(music.name)" class="music_inner">
                     <span class="singer_name">{{music.singer_name}}</span> -
-
                     <span>{{music.name}}</span> 
 
                     <audio class="mus_timeline" controls>
@@ -91,21 +92,6 @@
                 </div>
             </div>
         </div>
-        <!-- имя:
-        <input id="name" type="text"> <br><br>
-        фамилия:
-        <input id="password" type="text"> <br><br>
-        <h1>Пользователь:</h1>
-        <button @click="workingWithUsers('get_user')">Get!</button> 
-        <button @click="workingWithUsers('set_user')">Put!</button> <br>
-
-        <br><br>
-
-        <h1>Исполнитель:</h1>
-        <button @click="workingWithUsers('get_singer')">Get!</button>
-        <button @click="workingWithUsers('set_singer')">Put!</button> -->
-
-        
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

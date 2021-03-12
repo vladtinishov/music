@@ -12,8 +12,17 @@ nav ul {
 
     background: rgb(26, 108, 202);
     margin-top: 0;
-
-    box-shadow: 1px 3px 1px 1px rgba(26, 108, 202, 0.678);
+}
+.time_line{
+    width: 100%;
+    height: 5px;
+    background: rgba(26, 108, 202, 0.281);
+    margin-top: -17px
+}
+.inner_time_line{
+    height: 5px;
+    background: rgba(27, 80, 141, 0.753);
+    transition: .3s all;
 }
 nav ul li{
     font-size: 18px;
