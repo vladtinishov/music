@@ -6,12 +6,18 @@ let app = new Vue({
         mus_obj: new Audio(),
         mus_name: '',
         mus_list: false,
-        form_show: true,
-        select: false,
+        select: true,
+        form_show: false,
+        form_show_singer: false,
+
+        get_load_form: false,
     },
     mounted: function(){
         axios.post('index.php/MusicDownload/get_all_music')
-            .then(data => this.musics = data.data);
+            .then(data => {
+                this.musics = data.data;
+                console.log(data.data)
+            });
     },
     methods: {
         workingWithUsers(method){
@@ -21,7 +27,30 @@ let app = new Vue({
                 name: name,
                 password: password
             })
-            .then(data => console.log(data.data))
+            .then(data => {
+                if(method === 'get_user'){
+                    console.log(data.data.user[0] != null);
+                    if(data.data.user[0] != null){
+                        this.form_show = false;
+                        this.mus_list = true;
+                        this.get_load_form = false;
+                    }
+                }
+                else if(method === 'set_user'){
+                    console.log(console.log(data.data))
+                }
+                else if(method === 'get_singer'){
+                    console.log(data.data.singer[0] != null);
+                    if(data.data.singer[0] != null){
+                        this.form_show_singer = false;
+                        this.get_load_form = true;
+                        this.mus_list = true;
+                    }
+                }
+                else if(method === 'set_singer'){
+                    console.log(console.log(data.data))
+                }
+            })
         },
         uploadMusic:function(){
             let form = document.getElementById('form');
@@ -48,6 +77,14 @@ let app = new Vue({
             this.stop();
             this.mus_obj = new Audio('music/' + name);
             this.play();
+        },
+        change(){
+            this.select = false;
+            this.form_show = true;
+        },
+        change_singer(){
+            this.select = false;
+            this.form_show_singer = true
         }
     }
 })

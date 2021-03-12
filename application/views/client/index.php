@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" 
         href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>/templates/style.css">
     <title>Music</title>
 </head>
 <body>
+    <style><?php require_once('templates/style.css');?></style>
     <!-- <h1>Main/Music</h1> -->
     <div id="app">
         <nav>
@@ -29,15 +29,15 @@
             </ul>
         </nav>
 
-        <div v-if="!select" class="select">
+        <div v-if="select" class="select">
             <div class="inner_select">
                 <p>Войти как:</p>
                 <div class="select_buttons">
-                    <div class="but">
+                    <div @click="change" class="but">
                         <i class="fa fa-headphones" aria-hidden="true"></i> <br>
                         <span>Слушатель</span>
                     </div>
-                    <div class="but">
+                    <div @click="change_singer" class="but">
                     <i class="fa fa-volume-up" aria-hidden="true"></i> <br>
                         <span>Исполнитель</span>
                     </div>
@@ -45,17 +45,39 @@
             </div>
         </div>
 
-        <div  class="form">
-        имя:
-        <input id="name" type="text"> <br><br>
-        фамилия:
-        <input id="password" type="text"> <br><br>
-        <h1>Пользователь:</h1>
-        <button @click="workingWithUsers('get_user')">Get!</button> 
-        <button @click="workingWithUsers('set_user')">Put!</button> <br>
+        
+
+        <div v-if="form_show" class="form">
+            <div class="form_inner">
+                имя: <br>
+                <input id="name" type="text"> <br><br>
+                фамилия: <br>
+                <input id="password" type="text"> <br><br>
+                <span @click="workingWithUsers('get_user')">Войти</span> 
+                <span @click="workingWithUsers('set_user')">Зарегистрироваться</span> 
+            </div>
+        </div>
+        <div v-if="form_show_singer" class="form">
+            <div class="form_inner">
+                имя: <br>
+                <input id="name" type="text"> <br><br>
+                фамилия: <br>
+                <input id="password" type="text"> <br><br>
+                <span @click="workingWithUsers('get_singer')">Войти</span> 
+                <span @click="workingWithUsers('set_singer')">Зарегистрироваться</span> 
+            </div>
         </div>
 
-        <div v-if="!mus_list" class="main_music_list">
+        <div v-if="mus_list" class="main_music_list">
+            <div v-if="get_load_form" class="load_file">
+                <h1>Загрузка файла:</h1>
+                <form id="form" enctype="multipart/form-data" method="POST">
+                    <input type="hidden" name="MAX_FILE_SIZE" value="30000"/>
+                    <input name="userfile" type="file"/>
+                    <input type="hidden" value="1" name="user_id">
+                </form>
+                <button @click="uploadMusic">Загрузить</button>
+            </div>
             <div class="music" v-for="music in musics">
                 <div @click="start(music.name)" class="music_inner">
                     <span class="singer_name">{{music.singer_name}}</span> -
@@ -81,19 +103,17 @@
 
         <h1>Исполнитель:</h1>
         <button @click="workingWithUsers('get_singer')">Get!</button>
-        <button @click="workingWithUsers('set_singer')">Put!</button>
+        <button @click="workingWithUsers('set_singer')">Put!</button> -->
 
-        <h1>Загрузка файла:</h1>
-        <form id="form" enctype="multipart/form-data" method="POST">
-            <input type="hidden" name="MAX_FILE_SIZE" value="30000"/>
-            Отправить этот файл: <input name="userfile" type="file"/>
-            <input type="hidden" value="1" name="user_id">
-        </form>
-        <button @click="uploadMusic">Send</button> -->
+        
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<script src="<?php echo base_url();?>templates/script.js"></script>
+<script src="<?php echo base_url();?>templates/vue.js"></script>
+<script><?php require_once('templates/script.js');?></script>
+<script>
+// app.form_show = false;
+// app.select = true;
+</script>
 </body>
 </html>
