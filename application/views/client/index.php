@@ -29,23 +29,7 @@
             </ul>
         </nav>
 
-        <div class="main_music_list">
-            <div class="music" v-for="music in musics">
-                <div @click="start(music.name)" class="music_inner">
-                    <span class="singer_name">{{music.singer_name}}</span> -
-
-                    <span>{{music.name}}</span> 
-
-                    <audio class="mus_timeline" controls>
-                        <source v-bind:src="'music/'+music.name" type="audio/mpeg">
-                        <a href="'music/'+music.name">Скачайте музыку</a>.
-                    </audio>
-                </div>
-                <hr>
-            </div>
-        </div>
-
-        <div v-if="select" class="select">
+        <div v-if="!select" class="select">
             <div class="inner_select">
                 <p>Войти как:</p>
                 <div class="select_buttons">
@@ -57,6 +41,31 @@
                     <i class="fa fa-volume-up" aria-hidden="true"></i> <br>
                         <span>Исполнитель</span>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div  class="form">
+        имя:
+        <input id="name" type="text"> <br><br>
+        фамилия:
+        <input id="password" type="text"> <br><br>
+        <h1>Пользователь:</h1>
+        <button @click="workingWithUsers('get_user')">Get!</button> 
+        <button @click="workingWithUsers('set_user')">Put!</button> <br>
+        </div>
+
+        <div v-if="!mus_list" class="main_music_list">
+            <div class="music" v-for="music in musics">
+                <div @click="start(music.name)" class="music_inner">
+                    <span class="singer_name">{{music.singer_name}}</span> -
+
+                    <span>{{music.name}}</span> 
+
+                    <audio class="mus_timeline" controls>
+                        <source v-bind:src="'music/'+music.name" type="audio/mpeg">
+                        <a href="'music/'+music.name">Скачайте музыку</a>.
+                    </audio>
                 </div>
             </div>
         </div>

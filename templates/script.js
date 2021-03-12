@@ -2,11 +2,12 @@ let app = new Vue({
     el: '#app',
     data: {
         message: 'hello, world',
-        select: false,
         musics: [],
-        key: false,
         mus_obj: new Audio(),
         mus_name: '',
+        mus_list: false,
+        form_show: true,
+        select: false,
     },
     mounted: function(){
         axios.post('index.php/MusicDownload/get_all_music')
@@ -34,6 +35,7 @@ let app = new Vue({
         },
         getSelect(){
             this.select = true;
+            this.mus_list = false;
         },
         play(){
             this.mus_obj.play();

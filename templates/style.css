@@ -2,12 +2,13 @@ body{
     margin: 0;
     padding: 0;
 }
-
 nav ul {
     list-style: none;
     display: flex;
     align-items: center;
     font-family: sans-serif;
+
+    padding-left: 20%;
 
     background: rgb(26, 108, 202);
     margin-top: 0;
@@ -79,9 +80,14 @@ nav ul li{
 
 .main_music_list{
     font-family: sans-serif;
+    padding: 0 20%;
 }
 .music{
     margin: 10px;
+}
+.music{
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(26, 108, 202, 0.678);
 }
 .mus_timeline{
     display: none ;
